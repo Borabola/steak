@@ -1,0 +1,2429 @@
+@charset "UTF-8";
+/*stylelint-disable*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+/**
+ * Add the correct display in IE 9-.
+ */
+audio,
+video {
+  display: inline-block; }
+
+/**
+ * Add the correct display in iOS 4-7.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Remove the border on images inside links in IE 10-.
+ */
+img {
+  border-style: none; }
+
+/**
+ * Hide the overflow in IE.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers (opinionated).
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: PT Sans;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */ }
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible; }
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none; }
+
+/**
+ * Remove the default vertical scrollbar in IE.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * 1. Add the correct box sizing in IE 10-.
+ * 2. Remove the padding in IE 10-.
+ */
+[type="checkbox"],
+[type="radio"] {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */ }
+
+/* roboto-condensed-300 - cyrillic_latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Condensed Light'), local('RobotoCondensed-Light'),
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-300.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-300.woff') format('woff') /* Modern Browsers */
+}
+/* roboto-condensed-regular - cyrillic_latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto Condensed'), local('RobotoCondensed-Regular'),
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-regular.woff') format('woff') /* Modern Browsers */
+}
+/* roboto-condensed-700 - cyrillic_latin */
+@font-face {
+  font-family: 'Roboto Condensed';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Condensed Bold'), local('RobotoCondensed-Bold'),
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-700.woff2') format('woff2'), /* Super Modern Browsers */
+  url('../fonts/roboto-condensed-v18-cyrillic_latin-700.woff') format('woff') /* Modern Browsers */
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  padding: 0;
+
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 300;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+picture {
+  line-height: 0;
+}
+
+.visually-hidden:not(:focus):not(:active),
+.visually-hidden {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+
+  white-space: nowrap;
+
+  -webkit-clip-path: inset(100%);
+
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.page-header {
+  position: relative;
+  background-color: #000000;
+  width: 100%;
+  min-height: 200px;
+
+}
+
+.page-header__logo {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+  z-index: 3;
+  height: auto;
+  margin-left: -15%;
+}
+.page-header__logo-img {
+  width: 50%;
+  height: auto;
+}
+
+.page-header__background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 200px;
+  background: #312e2d url('../img/steak_main2.jpg') no-repeat;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+  background-size: 100% 70%;
+}
+.page-header__video video {
+  display: none;
+}
+
+.page-header__background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: inherit;
+  /*background-color: #006600; */
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(10%, #000), color-stop(30%, #000), color-stop(65%, transparent), to(transparent));
+  background-image: -o-linear-gradient(top, #000 10%, #000 30%, transparent 65%, transparent 100%);
+  background-image: linear-gradient(to bottom, #000 10%, #000 30%, transparent 65%, transparent 100%);
+}
+
+.cooking__line {
+  position: relative;
+  z-index: 3
+}
+
+.cooking__line:before {
+  content: "";
+  position: absolute;
+  right: -10px;
+  top: -27px;
+  height: 55px;
+  width: calc(100% + 10px);
+  background-color: #fff;
+  z-index: 3;
+  /* transform-origin: right center; */
+  -webkit-transform: rotate(175deg);
+  -ms-transform: rotate(175deg);
+  transform: rotate(175deg);
+}
+
+.cooking__header {
+  position: relative;
+  width: 100%;
+  padding: 27px 5px;
+  z-index: 4;
+}
+
+.cooking__header:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 20%;
+  height: 2px;
+  margin-left: -10%;
+  background: #000;
+}
+
+.cooking__header h2 {
+  position: relative;
+  margin: 0 auto;
+  z-index: 4;
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 600;
+  text-transform: uppercase;
+  padding-left: 15px;
+}
+.cooking__header h2 span{
+  font-weight: 300;
+}
+
+.cooking__text {
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 30px;
+
+  padding: 20px;
+  z-index: 4;
+}
+
+.preparation__img {
+  width: 100%;
+  min-height: 100vw;
+  background-color: #000000;
+  background-image: url("../img/preparation.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.preparation {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.preparation__text {
+  margin-top: -2px;
+}
+.preparation__text p {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 15px;
+}
+
+.preparation__text h3 {
+  color: #ffffff;
+  background-color: #000000;
+  padding: 30px 15px;
+  margin-top: -1px;
+
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 300;
+}
+
+.pan h4 {
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 300;
+  padding: 30px 10px;
+  text-align: center;
+}
+.pan {
+  margin-bottom: 30px;
+}
+.pan p {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 0 15px;
+
+  font-size: 22px;
+  line-height: 30px;
+}
+.temperature {
+  padding: 20px 0;
+  background-color: #000000;
+}
+
+.temperature h5 {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  /*width: 470px; */
+  margin: 0 auto;
+  margin-bottom: 50px;
+  text-align: center;
+
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #ffffff;
+  overflow: hidden;
+}
+
+/*.temperature h5:before,
+.temperature h5:after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  box-sizing: border-box;
+  width: 15%;
+  height: 2px;
+  background: #ffffff;
+}
+.temperature h5:before {
+  margin-left: -100%;
+  border-right: 10px solid #000000;
+}
+.temperature h5:after {
+  margin-right: -100%;
+  border-left: 10px solid #000000;
+} */
+
+.temperature__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-bottom: 50px;
+}
+
+.temperature__type {
+  position: relative;
+  display: block;
+  padding: 5px;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+/*.temperature__type:not(:nth-child(3)) {
+  width: 45%;
+}
+
+.temperature__type:nth-child(3) {
+  width: 100%;
+} */
+
+.temperature__FBlock {
+  position: absolute;
+  top: 0;
+  left: calc(50% + 12px);
+  display: block;
+  font-size: 26px;
+  line-height: 12px;
+  font-weight: 300;
+  background-color: #ffffff;
+  padding: 10px 17px;
+}
+
+.temperature__FBlock::after {
+  content: "";
+  position: absolute;
+  bottom: calc(-100% + 18px);
+  left: 0;
+  border: 10px solid transparent;
+  border-left: 10px solid #ffffff;
+  border-top: 10px solid #ffffff;
+}
+
+.temperature__CBlock {
+  margin-top: 32px;
+  font-size: 36px;
+  line-height: 50px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+}
+
+.temperature__name {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.temperature__rus-name {
+  font-size: 36px;
+  line-height: 36px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+}
+
+.types-of-steaks {
+  position: relative;
+  display: block;
+  background-color: #1b1d20;
+}
+/*.types-of-steaks__red {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 130px;
+  /*right: 15%;
+  /*left: calc(50% + 300px);*/
+/*background-color: #fd4d4d;
+width: 246px;
+height: 211px; /*231px;*/
+/* border-radius: 50%;
+}*/
+
+.types-of-steaks__red {
+  display: none;
+
+  position: absolute;
+  bottom: 470px;
+  right: 15px;
+  background-color: #fd4d4d;
+  width: 230px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.types-of-steaks__red--show {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-animation: rotateInDownLeft 0.6s;
+  animation: rotateInDownLeft 0.6s;
+  -webkit-animation-name: rotateInDownLeft;
+  animation-name: rotateInDownLeft;
+  /*animation-name: flipInY;*/
+}
+
+.types-of-steaks__red::after {
+  position: absolute;
+  content: "";
+  right: 30px;
+  bottom: -5px;
+  border: 43px solid transparent;
+  border-left: 42px solid #fd4d4d;
+  border-bottom: 42px solid #fd4d4d;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.types-of-steaks__text {
+  width: 80%;
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: 400;
+  color: #ffffff;
+  text-align: center;
+  z-index: 3;
+}
+
+.types-of-steaks h2 {
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-align: center;
+  padding-top: 115px;
+}
+.types-of-steaks h4 {
+  font-size: 36px;
+  line-height: 60px;
+  font-weight: 300;
+  color: #ffffff;
+  padding: 5px;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.types-of-steaks p {
+  color: #ffffff;
+  padding: 15px;
+  /*margin-bottom: 40px;*/
+  margin-bottom: 50px;
+}
+
+.types-of-steaks__img {
+  display: block;
+  width: 90%;
+  max-width: 784px;
+  margin: 0 auto;
+  padding-bottom: 75px;
+}
+
+a.types-of-steaks__part {
+  color: transparent;
+  cursor: pointer;
+  transition: color 0.5s ease-out;
+  -moz-transition: color 0.5s ease-out;
+  -o-transition: color 0.5s ease-out;
+  -webkit-transition: color 0.5s ease-out;
+
+}
+a.types-of-steaks__part:hover {
+  color: rgba(255, 0, 0, 0.4);
+}
+
+svg a.types-of-steaks__part:hover ~ .types-of-steaks__red {
+  display: block;
+}
+
+.types-of-meat__1line {
+  margin-top: 65px;
+}
+.types-of-meat__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+  margin-bottom: 30px;
+}
+
+.types-of-meat__item h5 {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.types-of-meat__synonyms {
+  font-size: 18px;
+  line-height: 36px;
+  font-weight: 400;
+  text-transform: none;
+}
+
+.types-of-meat__description{
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  color: #666666;
+}
+
+.types-of-meat__item picture {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 50%;
+  max-width: initial;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.types-of-meat__item div {
+  width: 50%;
+  padding-right: 15px;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+}
+
+.steak-photo {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/*.steak-photo img:not(:last-child) {
+  display: none;
+} */
+.steak-photo  {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+.steak-photo picture:not(:last-child) {
+  display: none;
+}
+
+.recipe h2 {
+  font-size: 38px;
+  line-height: 50px;
+  font-weight: 600;
+  text-transform: uppercase;
+  text-align: center;
+  padding-top: 60px;
+  margin-bottom: 50px;
+}
+
+.recipe__ingredients {
+  position: relative;
+  width: 90%;
+  max-width: 1010px;
+  padding: 30px;
+  border: 2px solid #000000;
+  border-radius: 2px;
+  margin: 0 auto 60px auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+}
+
+.recipe__ingredients p {
+  font-size: 25px;
+  line-height: 30px;
+  font-weight: 300;
+  margin-bottom: 10px;
+}
+
+.recipe__ingredients:before {
+  content: "Ингредиенты";
+  position: absolute;
+  left: calc(50% - 80px);
+  top: -22px;
+  padding: 5px 20px;
+
+  font-size: 18px;
+  font-weight: 400;
+  background-color: #ffffff;
+}
+
+.recipe__ingredients:after {
+  content: "";
+  position: absolute;
+  left: calc(50% - 19px);
+  bottom: -22px;
+  width: 14px;
+  height: 14px;
+  background-color: #000000;
+  border: 12px solid #ffffff;
+
+}
+
+.recipe ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  width: 90%;
+  max-width: 1010px;
+  margin: 0 auto 60px auto;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.recipe ol li {
+  margin-bottom: 60px;
+}
+
+.garnish__img {
+  width: 100%;
+  min-height: 100vw;
+  background-color: #000000;
+  background-image: url("../img/garnish.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.garnish {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.garnish__text {
+  margin-top: -2px;
+}
+.garnish__text p {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px 20px;
+}
+
+.garnish__text h3 {
+  padding: 30px 15px;
+
+  font-size: 45px;
+  line-height: 60px;
+  font-weight: 300;
+}
+
+.garnish ul {
+  margin-top: -15px;
+  padding: 0 15px;
+}
+.sauces__title-wrapper {
+  display: block;
+  position: relative;
+
+  text-align: center;
+}
+.sauces h4 {
+  position: relative;
+  display: inline-block;
+  padding: 0 15px;
+  margin-bottom: 40px;
+
+  font-size: 30px;
+  line-height: 60px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  background-color: #000000;
+}
+
+.sauces h4::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  border: 13px solid transparent;
+  border-left: 12px solid #000000;
+  border-top: 12px solid #000000;
+}
+.sauces__title-wrapper {
+  display: block;
+}
+.sauces__main-text {
+  padding: 0 15px;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-bottom: 40px;
+}
+
+.sauces__article {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 50px 20px 0 20px;
+  margin: 0 30px 70px 30px;
+  border: 2px solid #000000;
+}
+
+.sauce::before {
+  content: "";
+  position: absolute;
+  left: calc(50% - 80px);
+  top: -22px;
+  padding: 5px 20px;
+  font-size: 30px;
+  font-weight: 600;
+  background-color: #ffffff;
+}
+
+.sauce1::before {
+  content: "Соус №1";
+}
+.sauce2::before {
+  content: "Соус №2";
+}
+.sauce3::before {
+  content: "Соус №3";
+}
+.sauce4::before {
+  content: "Соус №4";
+}
+.sauce5::before {
+  content: "Соус №5";
+}
+.sauce6::before {
+  content: "Соус №6";
+}
+.sauce7::before {
+  content: "Соус №7";
+}
+.sauce8::before {
+  content: "Соус №8";
+}
+
+.sauces__article  h6 {
+  font-weight: 600;
+}
+
+.sauces__article-text {
+  margin: 0  0 20px 0;
+}
+
+.wine {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 70px 20px 45px 20px;
+  background-color: #333333;
+}
+
+.wine h4 {
+  padding: 30px 20px;
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.wine p {
+  color: #ffffff;
+  padding: 0 20px;
+  margin-bottom: 35px;
+}
+
+.wine-type {
+  background-color: #000000;
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+
+.wine-type___img,
+.wine-type picture {
+  width: 98%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.zoom_img picture {
+  overflow:hidden;
+
+}
+
+.zoom_img img {
+  -moz-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  -webkit-transition: all 1s ease-out;
+}
+
+.zoom_img img:hover{
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+/* .page-header__logo {
+   top: 30px;
+ }
+
+
+ .page-header__logo-img {
+   width: 60%;
+ }
+
+ .page-header__background::before {
+   background-image: linear-gradient(to bottom, #000 40%, #000 50%, transparent 85%, transparent 100%);
+ }
+
+ .cooking-line:before {
+   content: "";
+   position: absolute;
+   right: -15px;
+   top: -57px;
+   height: 95px;
+   width: calc(100% + 20px);
+ }*/
+
+.wine-type h4,
+.wine-type__result h4 {
+  padding: 5px 20px 10px;
+  font-size: 30px;
+  line-height: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.wine-type span {
+  display: block;
+  font-size: 18px;
+  line-height: 60px;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.wine-type__wrapper {
+  width: 80%;
+  margin: 0 auto 30px auto;
+}
+
+.wine-type__wrapper form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.wine-type__select h5 {
+  font-size: 18px;
+  line-height: 42px;
+  font-weight: 300;
+  color: #ffffff;
+}
+
+.wine-type__select {
+  margin-bottom: 40px;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-right: 40px;
+
+  height: 40px;
+  border-bottom: 2px solid #ffffff;
+  cursor: pointer;
+}
+
+.wine-type__title::before,
+.wine-type__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  display: block;
+  width: 10px;
+  height: 2px;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  background-color: #ffffff;
+  -webkit-transform: translate(-3px, -50%) rotate(45deg);
+  -ms-transform: translate(-3px, -50%) rotate(45deg);
+  transform: translate(-3px, -50%) rotate(45deg);
+}
+
+.wine-type__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(-45deg);
+  -ms-transform: translate(3px, -50%) rotate(-45deg);
+  transform: translate(3px, -50%) rotate(-45deg);
+}
+
+.wine-type__select[data-state="active"] .wine-type__title::before {
+
+  -webkit-transform: translate(-3px, -50%) rotate(-45deg);
+
+  -ms-transform: translate(-3px, -50%) rotate(-45deg);
+
+  transform: translate(-3px, -50%) rotate(-45deg);
+}
+
+.wine-type__input {
+  display: none;
+}
+
+.wine-type__select[data-state="active"] .wine-type__title::after {
+  -webkit-transform: translate(3px, -50%) rotate(45deg);
+  -ms-transform: translate(3px, -50%) rotate(45deg);
+  transform: translate(3px, -50%) rotate(45deg);
+}
+
+.wine-type__label + input + .wine-type__label {
+  border-top: 0 solid #C7CCD160;
+}
+
+.wine-type__label {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  width: calc(100% + 40px);
+  height: 40px;
+  max-height: 0;
+  padding: 0 16px;
+  color: #000000;
+  font-size: 18px;
+  line-height: 60px;
+  -webkit-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+  cursor: pointer;
+  overflow: hidden;
+  background-color: #fce9e6;
+}
+
+.wine-type__label:hover {
+  background-color: #cdcdcd;
+  color: #000000;
+}
+
+/*.wine-type__select[data-state="active"] .wine-type__label + .wine-type__input + .wine-type__label, */
+.wine-type__select[data-state="active"] .wine-type__label {
+  max-height: 40px;
+  border-top-width: 1px;
+  position: relative;
+  z-index: 4;
+}
+
+.wine-type__select[data-state="disabled"] {
+  opacity: 0.6;
+}
+
+.wine-type__select[data-state="disabled"] .wine-type__label + .wine-type__input + .wine-type__label {
+  max-height: 0;
+}
+
+/*.wine-type__select[data-state="active"] .wine-type__label {
+  max-height: 40px;
+  border-top-width: 1px;
+  position: relative;
+  z-index: 4;
+}*/
+.wine-type__result {
+  position: relative;
+  font-size: 24px;
+  color: #ffffff;
+}
+
+.wine-type__result blockquote {
+  position: relative;
+  margin-top: 110px;
+  margin-bottom: 150px;
+  text-align: center;
+  width: 70%;
+  max-width: 570px;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 1;
+}
+
+.wine-type__result blockquote p {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.wine-type__result blockquote p:before {
+  content: "\201C";
+  color: #ffffff;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  font-size: 60px;
+  position: absolute;
+  left: -15px;
+  top: 5px;
+  opacity: 0.9;
+
+}
+
+.wine-type__name {
+  width: 70%;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  /*padding-right: 120px;*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 30px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+}
+
+.wine-type__name-left {
+  padding-right: 20px;
+}
+.wine-type__name-right {
+  padding-left: 0;
+
+}
+
+.wine-type__name-left--one {
+  margin-left: 250px;
+}
+
+.wine-type__img {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  /*padding-left: 50px; */
+  display: block;
+  z-index: 2;
+}
+
+.wine-type__description {
+  position: absolute;
+  bottom: -120px;
+  left: 0;
+  width: 270px;
+  height: 120px;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: left;
+
+  z-index: 3;
+}
+
+.wine-type__name-mobile {
+  margin-left: -90px;
+}
+
+.wine-type__description-white {
+  padding-top: 250px;
+}
+.page-footer__copyright {
+  padding: 10px;
+}
+.page-footer__copyright p {
+  text-align: center;
+  font-size: 18px;
+  line-height: 25px;
+  color: #000000;
+}
+
+
+@media (min-width: 450px) {
+  .types-of-steaks__red {
+    bottom: 500px;
+  }
+
+  /*.types-of-steaks__red::after {
+    position: absolute;
+    content: "";
+    left: 30px;
+    top: -20px;
+
+    border: 43px solid transparent;
+
+    border-left: 42px solid #fd4d4d;
+    border-bottom: 42px solid #fd4d4d;
+    transform: rotate(-15deg);
+  }*/
+
+
+  .cooking__header h2 {
+    width: 350px;
+    font-size: 40px;
+    line-height: 45px;
+  }
+  .recipe h2 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .temperature h5 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 470px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .temperature h5:before,
+  .temperature h5:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 15%;
+    height: 2px;
+    background: #ffffff;
+  }
+  .temperature h5:before {
+    margin-left: -100%;
+    border-right: 10px solid #000000;
+  }
+  .temperature h5:after {
+    margin-right: -100%;
+    border-left: 10px solid #000000;
+  }
+
+
+
+  .temperature__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  .temperature__type {
+    position: relative;
+    display: block;
+    padding: 5px;
+    margin-bottom: 40px;
+  }
+
+  .temperature__type:not(:nth-child(3)) {
+    width: 45%;
+  }
+
+  .temperature__type:nth-child(3) {
+    width: 100%;
+  }
+
+  .temperature__FBlock {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 12px);
+    display: block;
+    font-size: 26px;
+    line-height: 12px;
+    font-weight: 300;
+    background-color: #ffffff;
+    padding: 10px 17px;
+  }
+
+  .temperature__FBlock::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-100% + 18px);
+    left: 0;
+    border: 10px solid transparent;
+    border-left: 10px solid #ffffff;
+    border-top: 10px solid #ffffff;
+  }
+
+  .temperature__CBlock {
+    margin-top: 32px;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .temperature__name {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .temperature__rus-name {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .sauces__article {
+    padding: 50px 40px 0 40px;
+  }
+
+}
+@media (min-width: 550px) {
+  .types-of-steaks__red {
+    bottom: 530px;
+  }
+}
+@media (min-width: 592px) {
+  .types-of-steaks__red {
+    bottom: 30px;
+    right: 15px;
+  }
+  .types-of-steaks__red::after {
+    position: absolute;
+    content: "";
+    left: 130px;
+    top: -20px;
+    right: unset;
+    bottom: unset;
+    border: 43px solid transparent;
+
+    border-left: 42px solid #fd4d4d;
+    border-bottom: 42px solid #fd4d4d;
+    -webkit-transform: rotate(25deg);
+    -ms-transform: rotate(25deg);
+    transform: rotate(25deg);
+  }
+}
+
+@media (min-width: 660px) {
+  .types-of-steaks__red {
+    bottom: 150px;
+    right: 10px;
+  }
+
+  .page-header {
+    height: 53vw
+  }
+
+  .page-header__background {
+    /*min-height: 350px; */
+    min-height: 53vw;
+  }
+
+  .page-header__logo {
+    left: 30%;
+    top: 100px;
+  }
+
+  .page-header__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*height: 504px; */
+    height: 53vw;
+    background: url('../img/steak_main2.jpg') no-repeat;
+    background-position: right top;
+    background-size: 80% 100%;
+  }
+
+  .page-header__background::before {
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #000), color-stop(30%, #000), color-stop(75%, transparent), to(transparent));
+    background-image: -o-linear-gradient(left, #000 20%, #000 30%, transparent 75%, transparent 100%);
+    background-image: linear-gradient(to right, #000 20%, #000 30%, transparent 75%, transparent 100%);
+  }
+
+  .page-header__video {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 53vw;
+    /*height: 504px; */
+    overflow: hidden;
+  }
+
+  .page-header__video video {
+    display: block;
+    position: absolute;
+    /*top: -170px; */
+    width: 100%;
+    height: auto;
+  }
+
+  .cooking__line:before {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -57px;
+    height: 100px;
+    width: calc(100% + 20px);
+  }
+
+  .cooking__header {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 35px 35px;
+    margin: 0 auto;
+  }
+
+  .cooking__header:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 55%;
+    width: 10%;
+    height: 2px;
+    margin-left: -10%;
+    background: #000;
+  }
+
+  .cooking__header h2 {
+    width: 510px;
+    font-size: 60px;
+    line-height: 60px;
+    padding-left: 0;
+  }
+
+  .cooking__text {
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .preparation__text p {
+    padding-left: 20px;
+  }
+
+  .preparation__text h3 {
+    padding-left: 20px;
+    font-size: 40px;
+    line-height: 40px;
+  }
+
+  .pan p {
+    padding-left: 20px;
+  }
+
+  .types-of-steaks {
+    background-image: url("../img/black-deck.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .types-of-meat__1line,
+  .types-of-meat__2line,
+  .types-of-meat__3line {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .types-of-meat__item {
+    margin-bottom: 30px;
+  }
+
+  .types-of-meat__3line .types-of-meat__item {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .types-of-meat__item img,
+  .types-of-meat__item picture {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .types-of-meat__3line img {
+    width: 60%;
+    height: 60%;
+  }
+
+  .steak-photo {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+
+  /*.steak-photo img:not(:last-child),
+  .steak-photo img:last-child {
+    display: block;
+    width: 49%;
+    border: 1px solid #ffffff;
+  } */
+  .steak-photo picture:not(:last-child),
+  .steak-photo picture:last-child {
+    display: block;
+    width: 49%;
+    border: 1px solid #ffffff;
+  }
+
+  .recipe h2 {
+    font-size: 60px;
+    line-height: 60px;
+    margin-bottom: 70px;
+  }
+
+  .recipe__ingredients {
+    padding: 65px 75px;
+    margin-bottom: 105px;
+  }
+
+  .recipe__ingredients p {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  .garnish__text h3 {
+    padding-left: 40px;
+    font-size: 48px;
+  }
+
+  .sauces__main-text {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 40px;
+  }
+
+  .sauces__article-text {
+    margin: 0  0 20px 0;
+  }
+
+  .sauces__article-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+
+  .sauces__article {
+    width: 42%;
+    padding: 50px 5% 0 5%;
+    margin: 0 5% 70px 5%;
+  }
+  .sauces__article:nth-child(2n-1) {
+    margin-right: 0;
+  }
+
+  .wine-and-food___img,
+  .wine-and-food picture {
+    width: inherit;
+    height: auto;
+    margin: 0 auto;
+    display: block;
+  }
+
+
+  .wine-type {
+    padding-bottom: 50px;
+  }
+  .wine-type__img {
+    margin-top: -120px;
+    padding-left: 50px;
+  }
+
+  .wine-type__name {
+    width: 70%;
+    max-width: 700px;
+    font-size: 55px;
+    line-height: 60px;
+  }
+
+  .wine-type__description {
+    bottom: 170px;
+    left: calc(50% + 120px);
+    width: 210px;
+    height: 120px;
+    font-size: 18px;
+    line-height: 30px;
+  }
+
+  .wine-type__name-mobile {
+    margin-left: 0;
+  }
+
+  .wine-type__name-left {
+    padding-right: 50px;
+
+  }
+  .wine-type__name-right {
+    padding-left: 50px;
+
+  }
+
+  .wine-type__description-white {
+    padding-top: 0;
+  }
+
+  .wine-type__name-left--one {
+    margin-left: 0;
+  }
+
+  .temperature h5 {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 470px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    text-align: center;
+
+    font-size: 24px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    overflow: hidden;
+  }
+
+  .temperature h5:before,
+  .temperature h5:after {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 15%;
+    height: 2px;
+    background: #ffffff;
+  }
+  .temperature h5:before {
+    margin-left: -100%;
+    border-right: 10px solid #000000;
+  }
+  .temperature h5:after {
+    margin-right: -100%;
+    border-left: 10px solid #000000;
+  }
+
+
+
+  .temperature__wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-bottom: 50px;
+  }
+
+  .temperature__type {
+    position: relative;
+    display: block;
+    padding: 5px;
+    margin-bottom: 40px;
+  }
+
+  .temperature__type:not(:nth-child(3)) {
+    width: 45%;
+  }
+
+  .temperature__type:nth-child(3) {
+    width: 100%;
+  }
+
+  .temperature__FBlock {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 12px);
+    display: block;
+    font-size: 26px;
+    line-height: 12px;
+    font-weight: 300;
+    background-color: #ffffff;
+    padding: 10px 17px;
+  }
+
+  .temperature__FBlock::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-100% + 18px);
+    left: 0;
+    border: 10px solid transparent;
+    border-left: 10px solid #ffffff;
+    border-top: 10px solid #ffffff;
+  }
+
+  .temperature__CBlock {
+    margin-top: 32px;
+    font-size: 36px;
+    line-height: 50px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .temperature__name {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .temperature__rus-name {
+    font-size: 36px;
+    line-height: 36px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 800px) {
+  .wine-type__wrapper form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .wine-type__result h4 {
+    padding: 30px 20px;
+    font-size: 48px;
+    line-height: 60px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 50px;
+  }
+
+  .wine-type__name {
+    width: 70%;
+    max-width: 700px;
+    font-size: 72px;
+    line-height: 60px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+}
+
+@media (min-width: 900px) {
+  .preparation {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 45px;
+  }
+
+  .preparation__img  {
+    width: 50%;
+    min-height: 50vw;
+    background-image: url("../img/preparation.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+    /*overflow:hidden; /* this is important */
+    /*position:relative; /* this is important too */
+  }
+
+  /*.preparation-img img {
+    position: absolute;
+    width: auto;
+    height: 100%;
+    top: 0;
+    right: -300px;
+  }
+    /* .preparation-img img {
+      height: auto;
+    } */
+
+  .preparation__text {
+    margin-top: 0;
+    padding-left: 30px;
+    width: 50%;
+  }
+  .preparation__text p {
+    padding-left: 0;
+  }
+
+
+  .preparation__text h3 {
+    padding-left: 50px;
+
+    font-size: 48px;
+    line-height: 48px;
+  }
+
+  .pan {
+    margin-bottom: 50px;
+  }
+
+  .pan p {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .temperature h5 {
+    width: 600px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 36px;
+    line-height: 60px;
+  }
+  .temperature__wrapper {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  .temperature__type {
+    margin-bottom: 0;
+  }
+
+  .temperature__type:not(:nth-child(3)),
+  .temperature__type:not(:first-child),
+  .temperature__type:nth-child(3) {
+    width: 20%;
+  }
+
+  .temperature__type:first-child {
+    width: 15%;
+  }
+
+  .temperature__FBlock {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 12px);
+    display: block;
+    font-size: 20px;
+    line-height: 10px;
+    font-weight: 300;
+    background-color: #ffffff;
+    padding: 9px 10px;
+  }
+
+  .temperature__FBlock::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-100% + 17px);
+    left: 0;
+    border: 6px solid transparent;
+    border-left: 6px solid #ffffff;
+    border-top: 6px solid #ffffff;
+  }
+
+  .temperature__CBlock {
+    margin-top: 27px;
+    font-size: 30px;
+    line-height: 35px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .temperature__name {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 600;
+    color: #ffffff;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
+  .temperature__rus-name {
+    font-size: 30px;
+    line-height: 30px;
+    font-weight: 300;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .pan h4 {
+    margin-bottom: 35px;
+  }
+
+  .types-of-steaks p {
+    padding-bottom: 90px;
+  }
+
+  .types-of-steaks__img {
+    padding-bottom: 82px;
+  }
+
+  /*.types-of-meat__item img,*/
+  .types-of-meat__item picture {
+    width: 40%;
+    height: auto;
+  }
+
+  .types-of-meat__3line picture {
+    width: 30%;
+    height: auto;
+  }
+
+  /*.steak-photo img:not(:last-child),
+  .steak-photo img:last-child {
+    box-sizing: border-box;
+    display: block;
+    width: 33.3%;
+    border: 1px solid #ffffff;
+  }*/
+  .steak-photo picture:not(:last-child),
+  .steak-photo picture:last-child {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+    width: 33.3%;
+    border: 1px solid #ffffff;
+  }
+
+  .garnish {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    margin-bottom: 45px;
+  }
+
+  .garnish__img  {
+    width: 50%;
+    min-height: 50vw;
+    background-size: cover;
+    background-position: 50% 50%;
+  }
+
+  .garnish__text {
+    margin-top: 0;
+    padding-left: 30px;
+    width: 50%;
+  }
+  .garnish__text p {
+    padding-left: 0;
+  }
+
+  .wine h4 {
+    margin-bottom: 30px;
+  }
+
+  .wine p {
+    max-width: 80%;
+    margin: 0 auto 30px auto;
+  }
+
+  .wine-type__description {
+    width: 280px;
+  }
+}
+
+
+@media (min-width: 990px) {
+
+  .types-of-steaks__red {
+    position: absolute;
+    bottom: 130px;
+    /*right: 15%;*/
+    left: calc(50% + 300px);
+    background-color: #fd4d4d;
+    width: 246px;
+    height: 211px; /*231px;*/
+    border-radius: 50%;
+  }
+
+  .types-of-steaks__red::after {
+    position: absolute;
+    content: "";
+    left: 30px;
+    top: -20px;
+
+    border: 43px solid transparent;
+
+    border-left: 42px solid #fd4d4d;
+    border-bottom: 42px solid #fd4d4d;
+    -webkit-transform: rotate(-15deg);
+    -ms-transform: rotate(-15deg);
+    transform: rotate(-15deg);
+  }
+
+  .cooking__line:before {
+    content: "";
+    position: absolute;
+    right: -15px;
+    top: -69px;
+    height: 138px;
+    width: calc(100% + 20px);
+  }
+
+  .types-of-steaks p {
+    width: 951px;
+    margin: 0 auto;
+    padding-bottom: 120px;
+  }
+
+  .sauces__article-wrapper {
+    width:98%;
+    max-width: 1700px;
+    margin: 0 auto;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+
+  .sauces__article {
+    width: 31%;
+    padding: 50px 1.5% 0 1.5%;
+    margin: 0 0 70px 1.5%;
+  }
+  .sauces__article:nth-child(7) {
+    margin-left: auto;
+  }
+  .sauces__article:nth-child(8) {
+    margin-right: 17.5%;
+  }
+  /*.sauces__article:nth-child(2n+1) {
+   margin-right: 1.5%;
+  }*/
+}
+
+@media (min-width: 1200px) {
+  .types-of-meat__1line {
+    width: 100%;
+    max-width: 1290px;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+
+  .types-of-meat__2line {
+    width: 100%;
+    max-width: 1450px;
+    margin-left: auto;
+  }
+
+  .types-of-meat__2line img {
+    margin-right: 20px;
+  }
+
+  .types-of-meat__3line {
+    width: 60%;
+    max-width: 770px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .types-of-meat__3line img {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    padding-left: 50px;
+    margin-left: 40px;
+    margin-right: 40px;
+
+  }
+
+  .types-of-meat__item img,
+  .types-of-meat__item picture {
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+  .types-of-meat {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1740px;
+  }
+
+}
+
+
+@media (min-width: 1600px) {
+  /*.page-header {
+    min-height: 844px;
+  }*/
+
+  .page-header__logo {
+    position: absolute;
+    left: 40%;
+    top: 167px;
+    z-index: 3;
+    width: 340px;
+    height: 279px;
+  }
+
+  .page-header__logo-img {
+    width: 100%;
+  }
+
+  .page-header__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 53vw;
+    background: url('../img/steak_main2.jpg') no-repeat;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-size: 80% 100%;
+  }
+
+  .page-header__video video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    /*height: 53vw; */
+  }
+
+
+
+  .page-header__background::before {
+    content: "";
+    font-size: 50px;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: inherit;
+    /*background-color: #006600; */
+    background-image: -webkit-gradient(linear, left top, right top, color-stop(20%, #000), color-stop(30%, #000), color-stop(75%, transparent), to(transparent));
+    background-image: -o-linear-gradient(left, #000 20%, #000 30%, transparent 75%, transparent 100%);
+    background-image: linear-gradient(to right, #000 20%, #000 30%, transparent 75%, transparent 100%);
+  }
+
+  .cooking__line:before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: -95px;
+    height: 310px;
+    width: calc(100% + 50px);
+    background-color: #fff;
+    z-index: 3;
+    /* transform-origin: right bottom; */
+    -webkit-transform: rotate(175deg);
+    -ms-transform: rotate(175deg);
+    transform: rotate(175deg);
+  }
+
+  .cooking__header {
+    max-width: 560px;
+    padding: 31px 35px;
+    margin-top: -15px;
+  }
+
+  .cooking__text {
+    max-width: 780px;
+    margin: 0 auto;
+    margin-bottom: 35px;
+  }
+
+  .preparation__img  {
+    width: 50%;
+    min-height: 10vw;
+    background-image: url(../img/preparation.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 100% 50%;
+
+    /*вариант ограниченной картинки */
+    /* width: 50%;
+     height: auto;
+     background-image: url(../img/preparation.jpg);
+     background-repeat: no-repeat;
+     background-size: contain;
+     background-position: 100% 50%; */
+  }
+
+  .preparation__text {
+    max-width: 920px;
+  }
+
+  .pan {
+    margin-bottom: 100px;
+  }
+
+  .pan p {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .temperature__wrapper {
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+    width: 1600px;
+    margin: 0 auto;
+    margin-bottom: 92px;
+  }
+
+  .temperature h5 {
+    width: 860px;
+    margin-bottom: 90px;
+    margin-top: 53px;
+  }
+
+  .temperature__type {
+    width: 20%;
+  }
+
+  .temperature__FBlock {
+    position: absolute;
+    top: 0;
+    left: calc(50% + 12px);
+    display: block;
+    font-size: 20px;
+    line-height: 10px;
+    font-weight: 300;
+    background-color: #ffffff;
+    padding: 9px 10px;
+  }
+
+  .temperature__FBlock::after {
+    content: "";
+    position: absolute;
+    bottom: calc(-100% + 17px);
+    left: 0;
+    border: 6px solid transparent;
+    border-left: 6px solid #ffffff;
+    border-top: 6px solid #ffffff;
+  }
+
+  .temperature__CBlock {
+    margin-top: 27px;
+    font-size: 36px;
+    line-height: 45px;
+  }
+
+  .temperature__name {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .temperature__rus-name {
+    font-size: 36px;
+    line-height: 36px;
+  }
+
+  .sauces p {
+    max-width: 780px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+
+  .sauces__article {
+    width: 23%;
+    padding: 50px 1.5% 0 1.5%;
+    margin: 0 0 70px 1%;
+  }
+  .sauces__article:nth-child(7) {
+    margin-left: 1%;
+  }
+
+  .sauces__article:nth-child(8) {
+    margin-right: 0;
+  }
+
+  .wine p {
+    max-width: 1200px;
+    margin: 0 auto 30px auto;
+  }
+}
+
+@media (min-width: 1800px) {
+  .temperature__wrapper {
+    width: 1720px;
+  }
+
+  .steak-photo {
+    max-width: 1920px;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 2300px) {
+  .garnish__img {
+    width: 50%;
+    min-height: 30vw;
+  }
+}
+
+@media (min-width: 3000px) {
+  .cooking__line:before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    top: -95px;
+    height: 310px;
+    width: calc(100% + 50px);
+    background-color: #fff;
+    z-index: 3;
+    /* transform-origin: right bottom; */
+    -webkit-transform: rotate(177deg);
+    -ms-transform: rotate(177deg);
+    transform: rotate(177deg);
+  }
+}
